@@ -104,10 +104,10 @@ body {
 .category-item:hover {
   background-color: var(--second);
   color: var(--Primary);
-  .category-icon img {
-    filter: invert(0.8);
-    transform: scale(1.5, 1.5) translateY(-10px);
-  }
+}
+.category-item:hover img {
+  filter: invert(0.8);
+  transform: scale(1.5, 1.5) translateY(-10px);
 }
 
 .category-icon img {
@@ -147,3 +147,28 @@ body {
   }
 }
 /* end categories */
+
+/* start offers */
+.offers .carousel-indicators button {
+  height: 8px !important;
+  width: 8px !important;
+  border-radius: 50%;
+}
+/* end offers */
+
+.most-sells h5,
+.most-sells h3 {
+  direction: rtl;
+  font-weight: bold;
+}
+.most-sells span {
+  color: var(--Primary);
+}
+
+.most-sells a {
+  text-decoration: none;
+  color: var(--Fonts);
+}
+.most-sells a:hover .card {
+  border: 1px solid var(--second);
+}
