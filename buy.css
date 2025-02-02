@@ -1,0 +1,33 @@
+/* Import master.css styles */
+@import "master.css";
+
+/* Add styles specific to buy.html */
+
+.buy-container {
+  background-color: var(--Background);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 5px 8px 1px #16492b1f;
+}
+
+.buy-header {
+  color: var(--Primary);
+  font-size: 1.5em;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.buy-button {
+  background-color: var(--Primary);
+  color: var(--Background);
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.buy-button:hover {
+  background-color: var(--second);
+  color: var(--Primary);
+}
