@@ -35,7 +35,7 @@ body {
   background-color: #c3d2c6;
   color: var(--Fonts);
 }
-/* start header */
+/* end header */
 
 /* start hero section */
 
@@ -74,7 +74,6 @@ body {
     #1e482f20 100%
   );
 }
-/* end spliter */
 
 /* end hero section */
 .sectors {
@@ -171,4 +170,30 @@ body {
 }
 .most-sells a:hover .card {
   border: 1px solid var(--second);
+}
+/* start footer */
+footer {
+  height: 340px;
+  background-color: var(--Primary);
+  color: white;
+  margin-top: 20rem;
+  position: relative;
+  overflow: hidden;
+}
+footer .cont {
+  display: flex;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+footer .symbol {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+footer .symbol img {
+  display: block;
+  width: 220px;
+  height: auto;
 }
