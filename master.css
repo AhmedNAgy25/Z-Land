@@ -5,6 +5,14 @@
   --Primary: #1e482f;
   --second: #a0bc71;
   --Fonts: #0a1810;
+  --footer-padding: 4rem;
+  --footer-grid-gap: 2rem;
+  --footer-heading-size: 1.2rem;
+  --footer-text-size: 1rem;
+  --footer-icon-size: 1.2rem;
+  --footer-spacing: 1.5rem;
+  --footer-transition: 0.3s ease;
+  --footer-opacity: 0.8;
 }
 html {
   font-family: "Cairo", sans-serif;
@@ -173,27 +181,234 @@ body {
 }
 /* start footer */
 footer {
-  height: 340px;
   background-color: var(--Primary);
   color: white;
-  margin-top: 20rem;
   position: relative;
-  overflow: hidden;
-}
-footer .cont {
-  display: flex;
-  align-items: flex-start;
-  padding: 2rem;
+  padding: var(--footer-padding) 0 0;
+  margin-top: 20rem;
+  overflow: visible;
+  min-height: 400px;
 }
 
-footer .symbol {
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--footer-grid-gap);
+  margin-bottom: var(--footer-grid-gap);
+  position: relative;
+  z-index: 2;
+}
+
+.footer-column {
+  padding: 0 1rem;
+}
+
+.footer-column h3 {
+  color: white;
+  font-size: var(--footer-heading-size);
+  margin-bottom: var(--footer-spacing);
+  direction: rtl;
+  font-weight: 600;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  direction: rtl;
+}
+
+.footer-column ul li {
+  margin-bottom: calc(var(--footer-spacing) / 2);
+}
+
+.footer-column ul li a {
+  color: rgba(255, 255, 255, var(--footer-opacity));
+  text-decoration: none;
+  transition: color var(--footer-transition);
+  font-size: var(--footer-text-size);
+}
+
+.footer-column ul li a:hover {
+  color: var(--second);
+}
+
+/* Company Info Styles */
+.company-info {
+  max-width: 300px;
+}
+
+.footer-logo {
+  display: inline-block;
+  margin-bottom: var(--footer-spacing);
+}
+
+.footer-logo img {
+  width: 160px;
+  height: auto;
+}
+
+.company-description {
+  color: rgba(255, 255, 255, var(--footer-opacity));
+  margin-bottom: var(--footer-spacing);
+  line-height: 1.6;
+  font-size: var(--footer-text-size);
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  color: white;
+  font-size: var(--footer-icon-size);
+  transition: all var(--footer-transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  color: var(--second);
+  background: rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+}
+
+/* Contact Info */
+.contact-info li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, var(--footer-opacity));
+  margin-bottom: calc(var(--footer-spacing) / 2);
+}
+
+.contact-info li i {
+  font-size: var(--footer-icon-size);
+  color: var(--second);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: calc(var(--footer-spacing) / 2) 0;
+  text-align: center;
+  margin-top: var(--footer-spacing);
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Decorative Symbol */
+.decorative-symbol {
   position: absolute;
   bottom: 0;
   right: 0;
+  pointer-events: none;
+  z-index: 1;
+  transition: transform var(--footer-transition);
 }
 
-footer .symbol img {
+.decorative-symbol img {
   display: block;
   width: 220px;
   height: auto;
+  opacity: 1;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1200px) {
+  :root {
+    --footer-padding: 3rem;
+    --footer-grid-gap: 1.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  :root {
+    --footer-heading-size: 1.1rem;
+    --footer-text-size: 0.95rem;
+  }
+
+  .decorative-symbol img {
+    width: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .company-info {
+    grid-column: 1 / -1;
+    max-width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --footer-padding: 2rem;
+    --footer-grid-gap: 1rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-column {
+    text-align: center;
+  }
+
+  .company-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .company-description {
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .contact-info li {
+    justify-content: center;
+  }
+
+  .decorative-symbol {
+    display: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  footer {
+    background: none;
+    color: black;
+  }
+
+  .social-links,
+  .decorative-symbol {
+    display: none;
+  }
 }
