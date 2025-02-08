@@ -22,6 +22,17 @@ body {
   background-color: #d2e3d6;
   font-family: "Cairo", sans-serif;
 }
+
+.sectors {
+  color: var(--Primary);
+  font-size: 2em;
+  font-weight: 800;
+  padding: 5px 8px;
+  width: fit-content;
+  margin: 5rem auto 4rem;
+  border-bottom: var(--Primary) 2.5px solid;
+}
+
 /* start header */
 .navbar {
   border-bottom: 0.5px solid #16201a5b;
@@ -84,15 +95,6 @@ body {
 }
 
 /* end hero section */
-.sectors {
-  color: var(--Primary);
-  font-size: 1.2em;
-  font-weight: 800;
-  padding: 5px 8px;
-  width: fit-content;
-  margin: 5rem auto 4rem;
-  border-bottom: var(--Primary) 2.5px solid;
-}
 
 /* start categories */
 .categories {
@@ -268,17 +270,27 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
   text-decoration: none;
+  padding: 0;
+  line-height: 1;
+  aspect-ratio: 1;
 }
 
 .social-links a:hover {
   color: var(--second);
   background: rgba(255, 255, 255, 0.2);
   text-decoration: none;
+  transform: scale(1.1);
+}
+
+.social-links a i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Contact Info */
@@ -411,4 +423,34 @@ footer {
   .decorative-symbol {
     display: none;
   }
+}
+
+.main-info-body {
+  background: white;
+  margin: 8rem 0;
+  padding: 5rem 0;
+}
+.logopadge,
+.contact-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.logopadge img {
+  width: 100%;
+  max-width: 22rem;
+  padding: 1rem;
+}
+.info {
+  width: fit-content;
+}
+.info p {
+  margin: 0;
+}
+.pipe {
+  height: 1px;
+  width: 100%;
+  background-color: rgb(0, 0, 0);
+  margin: 1rem 0;
 }

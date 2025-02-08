@@ -1,0 +1,56 @@
+/* Contact page specific styles */
+.contact-card {
+    background-color: var(--BackgroundComponant);
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+.contact-icon {
+    color: var(--Primary);
+    font-size: 1.2rem;
+    width: 24px;
+}
+
+.contact-list a {
+    color: var(--Fonts);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-list a:hover {
+    color: var(--second);
+}
+
+.form-control {
+    border: 1px solid rgba(30, 72, 47, 0.2);
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+.form-control:focus {
+    border-color: var(--Primary);
+    box-shadow: 0 0 0 0.2rem rgba(160, 188, 113, 0.25);
+}
+
+.map-container {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* RTL Support */
+.form-control {
+    direction: rtl;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-card {
+        margin-bottom: 1rem;
+    }
+} 
