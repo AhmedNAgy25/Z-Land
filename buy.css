@@ -1,7 +1,7 @@
 /* Import master.css styles */
 @import "master.css";
 
-/* Add styles specific to buy.html */
+/* Add styles specific to engineer.html */
 
 .buy-container {
   background-color: var(--Background);
